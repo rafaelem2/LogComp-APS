@@ -1,0 +1,27 @@
+posicao Inimigo1 : B5
+posicao Inimigo2 : a5
+vida_inimigo = 3
+vida_inimigo2 = 3
+
+atirar B5
+caso (B5 == Inimigo1) {
+    vida_inimigo = vida_inimigo -1
+    mostra("Acertou")
+} seNao {
+    mostra("Errou")
+}
+
+posicao Inimigo1 : B4
+
+enquanto (vida_inimigo2 > 0) {
+    atirar a5
+    vida_inimigo2 = vida_inimigo2 - 1
+  }
+mostra(vida_inimigo, vida_inimigo2)
+
+funcao esconder (Inimigo1, Inimigo2) {
+    posicao Inimigo1 : Z100
+    posicao Inimigo2 : Z200
+}
+
+chama esconder(Inimigo1, Inimigo2)
